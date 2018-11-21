@@ -231,24 +231,7 @@ class tree:
 
         self.directions.append(chosenNode.path)
         self.current = chosenNode
-##       
-##        if(direction == 0):
-##            self.directions.append("L")
-##            self.current = self.current.left
-##            #print('going left')
-##        elif(direction == 1):
-##            self.directions.append("U")
-##            self.current = self.current.up
-##            #print('going up')
-##        elif(direction == 2):
-##            self.directions.append("R")
-##            self.current = self.current.right
-##           # print('going right')
-##        elif(direction == 3):
-##            self.directions.append("D")
-##            self.current = self.current.down
-##            #print('going down')
-    
+
     
         
     def calculateCheapestChild(self):
