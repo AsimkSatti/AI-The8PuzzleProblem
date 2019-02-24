@@ -159,13 +159,9 @@ class tree:
         
         if(space != 0 and space != 3 and space != 6):
             self.current.left = self.newNode()
-            
             self.current.left.table[space] = self.current.left.table[space-1]
-          
             self.current.left.table[space - 1] = '0'
 
-            
-        
         else:
             self.current.left = None
 
@@ -238,10 +234,7 @@ class tree:
         #Calculates Manhattan Distance by
         #*Adding all children to array
         #*Calculating thself.queued.append(self.current.left)e cost and position keeps track of LURD
-
- 
-            
-        manhattanDistanceCosts = []
+        
         if(self.current.left is not None and self.current.left.table not in self.visited):
  
             wrong = self.current.left.level + self.current.left.getIncorrect()
@@ -249,45 +242,34 @@ class tree:
             self.current.left.path ='L'
             self.queued.append(self.current.left)
             self.visited.append(self.current.left.table)
-            manhattanDistanceCosts.append(wrong)
+        
             self.size+=1
 
-        else:
-            manhattanDistanceCosts.append(sys.maxsize)
         if(self.current.up is not None and self.current.up.table not in self.visited):
             wrong = self.current.up.level + self.current.up.getIncorrect()
             self.current.up.path = "U"
             self.current.up.cost = wrong
             self.queued.append(self.current.up)
             self.visited.append(self.current.up.table)
-            manhattanDistanceCosts.append(wrong)
+          
             self.size+=1
 
-        else:
-            manhattanDistanceCosts.append(sys.maxsize)
         if(self.current.right is not None and self.current.right.table not in self.visited):
             wrong = self.current.right.level + self.current.right.getIncorrect()
             self.current.right.cost = wrong
             self.current.right.path = "R"
             self.queued.append(self.current.right)
             self.visited.append(self.current.right.table)
-            manhattanDistanceCosts.append(wrong)
             self.size+=1
 
-        else:
-            manhattanDistanceCosts.append(sys.maxsize)
         if(self.current.down is not None and self.current.down.table not in self.visited):
             wrong = self.current.down.level + self.current.down.getIncorrect()
             self.current.down.cost = wrong
             self.current.down.path = "D"
             self.queued.append(self.current.down)
             self.visited.append(self.current.down.table)
-            manhattanDistanceCosts.append(wrong)
+ 
             self.size+=1
-
-        else:
-            manhattanDistanceCosts.append(sys.maxsize)
-        
  
         #Each keeps track of which child then cheapest
 
